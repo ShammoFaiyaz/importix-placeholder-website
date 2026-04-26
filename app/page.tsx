@@ -118,7 +118,7 @@ export default function Home() {
           </div>
         </header>
 
-        <main className="flex flex-1 items-start pb-4 pt-8 md:pb-6 md:pt-14">
+        <main className="flex flex-1 items-start pb-4 pt-12 md:pb-6 md:pt-14">
           <div className="mx-auto flex w-full flex-col items-center">
             <p className="font-[var(--font-inter)] text-[10px] uppercase tracking-[0.45em] text-white/85">
               Releasing Soon
@@ -150,7 +150,7 @@ export default function Home() {
               )}
             </section>
 
-            <section className="mt-12 max-w-3xl text-center md:mt-16">
+            <section className="mt-16 max-w-3xl text-center md:mt-16">
               <h1 className="font-[var(--font-manrope)] text-3xl font-bold tracking-tight text-white md:text-5xl">
                 Importix is Arriving.
               </h1>
