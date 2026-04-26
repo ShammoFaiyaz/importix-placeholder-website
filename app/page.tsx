@@ -3,14 +3,14 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const TWO_WEEKS_IN_MS = 14 * 24 * 60 * 60 * 1000;
+const THIRTY_DAYS_IN_MS = 30 * 24 * 60 * 60 * 1000;
 
 function getCountdownEndMs(): number {
   const fromBuild = Number(process.env.NEXT_PUBLIC_COUNTDOWN_END_MS);
   if (Number.isFinite(fromBuild) && fromBuild > 0) {
     return fromBuild;
   }
-  return Date.now() + TWO_WEEKS_IN_MS;
+  return Date.now() + THIRTY_DAYS_IN_MS;
 }
 
 type CountdownParts = {
@@ -40,7 +40,7 @@ export default function Home() {
   const [isReady, setIsReady] = useState(false);
   const [hasEnded, setHasEnded] = useState(false);
   const [countdown, setCountdown] = useState<CountdownParts>({
-    days: "14",
+    days: "30",
     hours: "00",
     minutes: "00",
     seconds: "00",
@@ -51,7 +51,7 @@ export default function Home() {
       targetTimeRef.current = getCountdownEndMs();
     }
 
-    let intervalId: ReturnType<typeof window.setInterval> | undefined;
+    let intervalId: ReturnType<typeof globalThis.setInterval> | undefined;
 
     const tick = () => {
       if (!targetTimeRef.current) {
@@ -64,7 +64,7 @@ export default function Home() {
         setCountdown(getCountdown(targetTimeRef.current, now));
         setIsReady(true);
         if (intervalId !== undefined) {
-          window.clearInterval(intervalId);
+          globalThis.clearInterval(intervalId);
         }
         return;
       }
@@ -73,13 +73,13 @@ export default function Home() {
       setIsReady(true);
     };
 
-    const timeout = window.setTimeout(tick, 0);
-    intervalId = window.setInterval(tick, 1000);
+    const timeout = globalThis.setTimeout(tick, 0);
+    intervalId = globalThis.setInterval(tick, 1000);
 
     return () => {
-      window.clearTimeout(timeout);
+      globalThis.clearTimeout(timeout);
       if (intervalId !== undefined) {
-        window.clearInterval(intervalId);
+        globalThis.clearInterval(intervalId);
       }
     };
   }, []);
@@ -150,13 +150,13 @@ export default function Home() {
               )}
             </section>
 
-            <section className="mt-8 max-w-3xl text-center md:mt-10">
+            <section className="mt-12 max-w-3xl text-center md:mt-16">
               <h1 className="font-[var(--font-manrope)] text-3xl font-bold tracking-tight text-white md:text-5xl">
                 Importix is Arriving.
               </h1>
-              <p className="mx-auto mt-4 max-w-2xl font-[var(--font-inter)] text-sm leading-relaxed text-white/85 md:mt-5 md:text-base">
-                A curated transition into architectural minimalism. Redefining the
-                digital essence of form and function for the Importix era.
+              <p className="mx-auto mt-4 max-w-2xl font-[var(--font-inter)] text-sm font-light leading-relaxed text-white/85 md:mt-5 md:text-base">
+                Premium jerseys, smart gadgets, and custom 3D creations are
+                launching soon across Bangladesh. Stay tuned.
               </p>
             </section>
           </div>
@@ -164,14 +164,22 @@ export default function Home() {
 
         <footer className="flex w-full flex-col items-center gap-5 pt-2">
           <p className="font-[var(--font-inter)] text-[10px] uppercase tracking-[0.22em] text-white">
-            © 2024 Importix. All Rights Reserved.
+            © 2026 Importix. All Rights Reserved.
           </p>
           <nav
             aria-label="Footer links"
             className="flex items-center gap-8 font-[var(--font-inter)] text-[10px] uppercase tracking-[0.22em] text-white/85"
           >
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61582901443732"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Facebook
+            </a>
+            <a href="https://www.instagram.com/importix.bd" target="_blank" rel="noreferrer">
+              Instagram
+            </a>
           </nav>
         </footer>
       </div>
