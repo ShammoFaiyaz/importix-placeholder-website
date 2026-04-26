@@ -96,7 +96,7 @@ export default function Home() {
         priority
       />
 
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 pb-6 pt-5 md:px-10 md:pt-7">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 pb-6 pt-5 md:px-10 md:pt-7 lg:min-h-[66.667vh] lg:[zoom:1.5]">
         <header className="flex w-full items-center justify-center">
           <div className="flex items-center gap-3">
             <Image
