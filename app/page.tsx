@@ -96,12 +96,12 @@ export default function Home() {
         priority
       />
 
-      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 pb-6 pt-5 md:px-10 md:pt-7 lg:min-h-[66.667vh] lg:[zoom:1.5]">
+      <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col px-4 pb-5 pt-4 sm:px-6 md:px-10 md:pt-7">
         <header className="flex w-full items-center justify-center">
           <div className="flex items-center gap-3">
             <Image
               alt="Importix logo symbol"
-              className="h-20 w-20 object-contain"
+              className="h-10 w-10 object-contain sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
               src="/logo-icon.png"
               width={80}
               height={80}
@@ -109,7 +109,7 @@ export default function Home() {
             />
             <Image
               alt="Importix wordmark"
-              className="h-20 w-auto object-contain"
+              className="h-8 w-auto object-contain sm:h-9 md:h-11 lg:h-12"
               src="/text.png"
               width={625}
               height={100}
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
         </header>
 
-        <main className="flex flex-1 items-start pb-4 pt-12 md:pb-6 md:pt-14">
+        <main className="flex flex-1 items-start pb-3 pt-8 sm:pt-10 md:pb-6 md:pt-12">
           <div className="mx-auto flex w-full flex-col items-center">
             <p className="font-[var(--font-inter)] text-[10px] uppercase tracking-[0.45em] text-white/85">
               Releasing Soon
@@ -150,11 +150,11 @@ export default function Home() {
               )}
             </section>
 
-            <section className="mt-16 max-w-3xl text-center md:mt-16">
-              <h1 className="font-[var(--font-manrope)] text-3xl font-bold tracking-tight text-white md:text-5xl">
+            <section className="mt-10 max-w-3xl text-center sm:mt-12 md:mt-14">
+              <h1 className="font-[var(--font-manrope)] text-[clamp(2rem,5vw,3.4rem)] font-bold tracking-tight text-white">
                 Importix is Arriving.
               </h1>
-              <p className="mx-auto mt-4 max-w-2xl font-[var(--font-inter)] text-sm font-light leading-relaxed text-white/85 md:mt-5 md:text-base">
+              <p className="mx-auto mt-4 max-w-2xl font-[var(--font-inter)] text-[clamp(0.9rem,1.8vw,1.05rem)] font-light leading-relaxed text-white/85 md:mt-5">
                 Premium jerseys, smart gadgets, and custom 3D creations are
                 launching soon across Bangladesh. Stay tuned.
               </p>
@@ -162,7 +162,7 @@ export default function Home() {
           </div>
         </main>
 
-        <footer className="flex w-full flex-col items-center gap-5 pt-2">
+        <footer className="flex w-full flex-col items-center gap-4 pt-2 sm:gap-5">
           <p className="font-[var(--font-inter)] text-[10px] uppercase tracking-[0.22em] text-white">
             © 2026 Importix. All Rights Reserved.
           </p>
@@ -199,7 +199,7 @@ function TimerBlock({
   return (
     <div className="flex flex-col items-center">
       <span
-        className={`font-[var(--font-manrope)] text-[clamp(3.1rem,10vw,6rem)] font-extralight leading-none tracking-[-0.06em] text-white tabular-nums ${
+        className={`font-[var(--font-manrope)] text-[clamp(2.6rem,8.5vw,5.2rem)] font-extralight leading-none tracking-[-0.06em] text-white tabular-nums ${
           isReady ? "visible" : "invisible"
         }`}
       >
