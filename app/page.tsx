@@ -3,14 +3,14 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const THIRTY_DAYS_IN_MS = 30 * 24 * 60 * 60 * 1000;
+const SEVEN_DAYS_IN_MS = 7 * 24 * 60 * 60 * 1000;
 
 function getCountdownEndMs(): number {
   const fromBuild = Number(process.env.NEXT_PUBLIC_COUNTDOWN_END_MS);
   if (Number.isFinite(fromBuild) && fromBuild > 0) {
     return fromBuild;
   }
-  return Date.now() + THIRTY_DAYS_IN_MS;
+  return Date.now() + SEVEN_DAYS_IN_MS;
 }
 
 type CountdownParts = {
@@ -40,7 +40,7 @@ export default function Home() {
   const [isReady, setIsReady] = useState(false);
   const [hasEnded, setHasEnded] = useState(false);
   const [countdown, setCountdown] = useState<CountdownParts>({
-    days: "30",
+    days: "07",
     hours: "00",
     minutes: "00",
     seconds: "00",
